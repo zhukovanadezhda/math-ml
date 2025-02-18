@@ -1,6 +1,6 @@
 # Linear Algebra & Basic Math for Machine Learning
 
-Welcome to my personal project, where I explore and rebuild the basic concepts of linear algebra and fundamental mathematics that underpin machine learning. I'm coding everything from scratch as a way to learn more deeply and to share my journey with anyone interested in the math behind ML algorithms.
+In this personal project, I'm exploring and rebuilding the basic concepts of linear algebra and the core mathematics that form the foundation of machine learning. I'm coding everything from scratch to deepen my understanding, and I hope sharing my journey may help others interested in the math behind ML algorithms.
 
 ## Project Overview
 
