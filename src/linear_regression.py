@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matrix_ops
 
 
-def add_intercept(X):
+def add_intercept(X: np.ndarray) -> np.ndarray:
     """
     Adds an intercept term (a column of ones) to the design matrix X.
     
@@ -22,7 +22,7 @@ def add_intercept(X):
     return X_augmented
 
 
-def compute_normal_equation(X, y):
+def compute_normal_equation(X: np.ndarray, y: np.ndarray) -> np.ndarray:
     """
     Computes the OLS solution using the normal equation:
     
@@ -43,7 +43,7 @@ def compute_normal_equation(X, y):
     return beta
 
 
-def predict(X, beta):
+def predict(X: np.ndarray, beta: np.ndarray) -> np.ndarray:
     """
     Predicts the output for a given design matrix X and parameter vector beta.
     
@@ -57,7 +57,7 @@ def predict(X, beta):
     return matrix_ops.multiply_matrices(X, beta)
 
 
-def cost_function(X, y, beta):
+def cost_function(X: np.ndarray, y: np.ndarray, beta: np.ndarray) -> float:
     """
     Computes the cost (loss) function for linear regression:
     
@@ -86,7 +86,8 @@ def cost_function(X, y, beta):
     return cost
 
 
-def gradient_descent(X, y, beta_init, learning_rate, num_iterations):
+def gradient_descent(X: np.ndarray, y: np.ndarray, beta_init: np.ndarray, 
+                     learning_rate: float, num_iterations: int) -> tuple:
     """
     Performs gradient descent to minimize the cost function.
     

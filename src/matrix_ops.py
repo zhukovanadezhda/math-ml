@@ -4,7 +4,7 @@ from numba import njit
 
 
 @njit
-def add_matrices(A, B):
+def add_matrices(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     """Add two matrices element-wise.
 
     Args:
@@ -29,7 +29,7 @@ def add_matrices(A, B):
 
 
 @njit
-def subtract_matrices(A, B):
+def subtract_matrices(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     """Subtract two matrices element-wise.
 
     Args:
@@ -54,7 +54,7 @@ def subtract_matrices(A, B):
 
 
 @njit
-def scalar_multiply(A, scalar):
+def scalar_multiply(A: np.ndarray, scalar: float) -> np.ndarray:
     """Multiply a matrix by a scalar.
 
     Args:
@@ -73,7 +73,7 @@ def scalar_multiply(A, scalar):
 
 
 @njit
-def hadamard_product(A, B):
+def hadamard_product(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     """Compute the Hadamard product of two matrices.
     
     Args:
@@ -97,7 +97,7 @@ def hadamard_product(A, B):
     return C
 
 
-def to_2d(A, side):
+def to_2d(A: np.ndarray, side: str) -> np.ndarray:
     """
     Convert a 1D numpy array A to a 2D array.
       - If side=="left", returns a row vector (1, n).
@@ -127,7 +127,7 @@ def to_2d(A, side):
 
 
 @njit
-def matrix_matrix_multiply(A, B):
+def matrix_matrix_multiply(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     """
     Multiply two 2D arrays A and B.
     Assumes that A and B are 2D and that A.shape[1] == B.shape[0].
@@ -147,7 +147,7 @@ def matrix_matrix_multiply(A, B):
     return result
 
 
-def multiply_matrices(A, B):
+def multiply_matrices(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     """
     Multiply two numpy arrays A and B, mimicking np.dot.
     
@@ -197,7 +197,7 @@ def multiply_matrices(A, B):
 
 
 @njit
-def transpose(A):
+def transpose(A: np.ndarray) -> np.ndarray:
     """Compute the transpose of a matrix or vector.
     
     For a 2D array, swaps its dimensions. For a 1D array, interprets it as a 
@@ -228,7 +228,7 @@ def transpose(A):
 
 
 @njit
-def minor_matrix(A, row_index, col_index):
+def minor_matrix(A: np.ndarray, row_index: int, col_index: int) -> np.ndarray:
     """Compute the minor matrix of a given matrix.
     
     Args:
@@ -257,7 +257,7 @@ def minor_matrix(A, row_index, col_index):
 
 
 @njit
-def determinant(A):
+def determinant(A: np.ndarray) -> float:
     """Compute the determinant of a matrix.
     
     Args:
@@ -282,7 +282,7 @@ def determinant(A):
 
 
 @njit
-def trace(A):
+def trace(A: np.ndarray) -> float:
     """Compute the trace of a matrix.
     
     Args:
@@ -304,7 +304,7 @@ def trace(A):
 
 
 @njit
-def frobenius_norm(A):
+def frobenius_norm(A: np.ndarray) -> float:
     """Compute the Frobenius norm of a matrix.
     
     Args:
@@ -322,7 +322,7 @@ def frobenius_norm(A):
 
 
 @njit
-def inverse_matrix(A):
+def inverse_matrix(A: np.ndarray) -> np.ndarray:
     """Compute the inverse of a matrix.
     
     Args:
@@ -354,7 +354,7 @@ def inverse_matrix(A):
 
 
 @njit
-def lu_decomposition(A):
+def lu_decomposition(A: np.ndarray) -> tuple:
     """Compute the LU decomposition of a matrix with Doolittle’s Algorithm.
     
     Args:
@@ -390,7 +390,7 @@ def lu_decomposition(A):
 
 
 @njit
-def upper_triangular(A, b):
+def upper_triangular(A: np.ndarray, b: np.ndarray) -> (np.ndarray, np.ndarray):
     """Compute the upper triangular form of a matrix using Gaussian elimination.
     
     Args:
@@ -420,7 +420,7 @@ def upper_triangular(A, b):
 
 
 @njit
-def back_substitution(U, c):
+def back_substitution(U: np.ndarray, c: np.ndarray) -> np.ndarray:
     """Perform back substitution to solve a system of equations.
     
     Args:
@@ -442,7 +442,7 @@ def back_substitution(U, c):
 
 
 @njit
-def solve_gaussian(A, b):
+def solve_gaussian(A: np.ndarray, b: np.ndarray) -> np.ndarray:
     """Solve a system of linear equations using Gaussian elimination.
     
     Args:
