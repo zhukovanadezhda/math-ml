@@ -17,3 +17,19 @@ In modern machine learning, libraries like NumPy and TensorFlow often hide the u
 
 - **Integration into ML Algorithms:**  
   Ultimately, I hope to use these foundational math operations to build basic machine learning algorithms (e.g. linear regression, logistic regression, PCA, etc.)
+
+## Install & Setup
+
+First, clone the repository and navigate to the project folder:
+
+```bash
+git clone 
+cd math-ml
+```
+
+To set up the environment and install the required dependencies, use the following commands:
+
+```bash
+conda env create -f requirements.yml
+conda activate math-ml
+```
