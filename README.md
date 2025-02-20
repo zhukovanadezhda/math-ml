@@ -23,7 +23,7 @@ In modern machine learning, libraries like NumPy and TensorFlow often hide the u
 First, clone the repository and navigate to the project folder:
 
 ```bash
-git clone 
+git clone git@github.com:zhukovanadezhda/math-ml.git
 cd math-ml
 ```
 
